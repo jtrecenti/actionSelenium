@@ -1,0 +1,5 @@
+remDr <- remoteDriver("localhost", 4445L, "chrome")
+remDr$open()
+remDr$navigate("https://phptravels.com/demo")
+html <- remDr$getPageSource()
+writeChar(html[[1]], "result.html")
