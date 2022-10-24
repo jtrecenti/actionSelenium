@@ -26,7 +26,7 @@ jobs:
       - name: docker run
         run: docker run -d -p 4445:4444 selenium/standalone-chrome
       - name: run script
-        run: RScript script.R
+        run: Rscript script.R
       - name: Commit results
         run: |
           git config --local user.email "actions@github.com"
