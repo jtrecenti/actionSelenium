@@ -17,11 +17,8 @@ jobs:
           packages: |
             any::RSelenium
     
-      - name: docker pull
-        run: docker pull selenium/standalone-chrome
-      - name: docker and script run
+      - name: Rscript run
         run: |
-          docker run -d -p 4445:4444 selenium/standalone-chrome
           Rscript script.R
       - name: Commit results
         run: |
