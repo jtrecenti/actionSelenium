@@ -15,18 +15,14 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           packages: |
-            any::httr
-            any::dplyr
-            any::stringr
-            any::purrr
             any::RSelenium
     
       - name: docker pull
         run: docker pull selenium/standalone-chrome
-      - name: docker run
-        run: docker run -d -p 4445:4444 selenium/standalone-chrome
-      - name: run script
-        run: Rscript script.R
+      - name: docker and script run
+        run: |
+          docker run -d -p 4445:4444 selenium/standalone-chrome
+          Rscript script.R
       - name: Commit results
         run: |
           git config --local user.email "actions@github.com"
