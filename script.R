@@ -1,3 +1,5 @@
+library(RSelenium)
+
 remDr <- remoteDriver("localhost", 4445L, "chrome")
 remDr$open()
 remDr$navigate("https://phptravels.com/demo")
